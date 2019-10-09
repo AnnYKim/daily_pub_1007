@@ -1,0 +1,127 @@
+.footer {
+  color: #8f8f8f;
+  background-color: #222;
+
+  &-container {
+    padding: 80px 150px;
+  }
+
+  &__info {
+
+    &:after {
+      @include floatClear;
+    }
+  }
+
+  &__btn-container {
+    float: right;
+
+    &:after {
+      @include floatClear;
+    }
+  }
+
+  &__addr-container {
+    float: left;
+  }
+
+  &__btn {
+    float: left;
+    display: block;
+    margin-right: 10px;
+    padding: 20px 108px 20px 40px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    border: 2px solid;
+    border-radius: 3px;
+    transition: background 300ms,
+      color 300ms,
+      border 300ms;
+
+    // A/S 신청 버튼
+    &[class$=--as] {
+      border-color: #fff;
+      background-color: #fff;
+      background-size: 14px 15px;
+      background-position: right 20px top 50%;
+      background-repeat: no-repeat;
+      background-image: icon(arrow-right, "222222");
+
+      &:hover {
+        color: #fff;
+        background-color: transparent;
+        background-image: icon(arrow-right, "ffffff");
+      }
+    }
+
+    // 프로젝트 의뢰 버튼
+    &[class$=--req] {
+      color: #fff;
+      border-color: $blue;
+      background-color: $blue;
+      background-size: 24px 26px;
+      background-position: right 20px top 50%;
+      background-repeat: no-repeat;
+      background-image: icon(monitor, "f8f8f8");
+
+      &:hover {
+        color: $yellow;
+        border-color: $yellow;
+        background-color: transparent;
+        background-image: icon(monitor, "fffc00");
+      }
+    }
+  }
+
+  &__addr-office {
+    //오피스 타이틀
+    display: block;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  &__addr-text {
+    //주소지
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: #8f8f8f;
+  }
+
+  &__addr-map {
+    //지도보기
+    display: block;
+    font-size: 0;
+    width: 16px;
+    height: 18px;
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:after {
+      opacity: 0.5;
+      display: block;
+      content: '';
+      width: inherit;
+      height: inherit;
+      background-image: icon(map, "f8f8f8");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transition: opacity 300ms;
+    }
+  }
+
+  &__social-list {
+    position: relative;
+    margin-top: 80px;
+    padding: 60px 0 37px;
+    border-top: 1px solid #383838;
+    border-top-color: rgba(255, 255, 255, .1);
+  }
+
+
+}

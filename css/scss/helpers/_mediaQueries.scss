@@ -1,0 +1,35 @@
+// Break Point
+$desktop : 1200px;
+$laptop : 980px;
+$tablet: 768px;
+$mobile: 540px;
+
+// ---------- * ----------
+
+// Desktop
+@mixin res--desktop {
+  @media screen and (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Laptop
+@mixin res--laptop {
+  @media screen and (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+// Tablet
+@mixin res--tablet {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Mobile
+@mixin res--mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
