@@ -118,9 +118,66 @@
   &__social-list {
     position: relative;
     margin-top: 80px;
+    font-size: 0;
+    text-align: center;
     padding: 60px 0 37px;
     border-top: 1px solid #383838;
     border-top-color: rgba(255, 255, 255, .1);
+
+  }
+
+  &__social-item {
+    display: inline-block;
+    margin: 0 0 0 15px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+
+    &:after {
+      opacity: 0.5;
+      display: block;
+      content: '';
+      width: inherit;
+      height: inherit;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100%;
+      transition: opacity 300ms;
+    }
+
+    &[class$=--insta]:after {
+      background-image: icon(social-instagram, "f8f8f8");
+    }
+
+    &[class$=--fb]:after {
+      background-image: icon(social-facebook, "f8f8f8");
+    }
+
+    &[class$=--tw]:after {
+      background-image: icon(social-twitter, "f8f8f8");
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  &__copyright {
+    //카피라이트 부분
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 500;
+    color: #8f8f8f;
   }
 
 

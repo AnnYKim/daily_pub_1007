@@ -1,5 +1,298 @@
 .header {
+  z-index: 100;
   position: fixed;
-  outline: 3px solid blue;
-  display: none;
+  width: 100%;
+  // height: 126px;
+  padding-top: 60px;
+  // background: rgb(108, 108, 189);
+  // display: none;
+}
+
+.welove {
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0;
+  color: #757575;
+  font-weight: 800;
+  line-height: 66px;
+  letter-spacing: 0.05em;
+
+  &__text {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__icon {
+    display: inline-block;
+    margin: 5px 2px 0 0px;
+    vertical-align: middle;
+    width: 32px;
+    line-height: 67px;
+    text-align: center;
+    transform: scale(0.5);
+
+    svg {
+      animation: bounce 1600ms linear both infinite;
+    }
+  }
+}
+
+.logo {
+
+  &-main {
+    //메인 로고
+    position: absolute;
+    left: 60px;
+    width: 82px;
+    height: 79px;
+  }
+
+  &__text {
+    //텍스트 숨기기
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    left: -9999px;
+    top: -9999px;
+  }
+}
+
+.menu {
+  // display: none;
+
+}
+
+.menu-btn {
+  z-index: 400;
+  display: block;
+  position: absolute;
+  right: 60px;
+  width: 66px;
+  height: 66px;
+  border: 1px solid #222;
+  background-color: #fff;
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: -52px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    text-transform: uppercase;
+    font-size: 11px;
+    transform: scale(0.9);
+    letter-spacing: 0.07em;
+    text-align: right;
+    width: 40px;
+    transition: opacity 250ms;
+
+    &[class$=--opened] {
+      opacity: 0;
+    }
+  }
+
+  &__lineWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 22px;
+    height: 17px;
+  }
+
+  &__line {
+    @include pointer-none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: width 150ms, transform 400ms, opacity 450ms;
+
+    &[class$=--one] {
+      top: 0;
+    }
+
+    &[class$=--two] {
+      top: 7px;
+      width: 13px;
+    }
+
+    &[class$=--three] {
+      top: 14px;
+    }
+  }
+}
+
+.menu-btn:hover {
+  .menu-btn__line--two {
+    width: 100%;
+  }
+}
+
+.dim {
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, .5);
+  transform: translateZ(0);
+  visibility: hidden;
+}
+
+.menu__container {
+  position: fixed;
+  display: table;
+  z-index: 301;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 552px;
+  height: 100%;
+  padding: 60px;
+  background-color: #fff;
+  visibility: hidden;
+
+  &-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.menu {
+  &__list {
+    margin-bottom: 100px;
+  }
+
+  &__item {
+    position: relative;
+
+    &:after {
+      visibility: hidden;
+      z-index: -1;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $yellow;
+      transform: translateY(-50%);
+      content: '';
+    }
+
+    &:hover:after {
+      visibility: visible;
+    }
+
+    &.active:after {
+      visibility: visible;
+    }
+  }
+
+  &__link {
+    display: block;
+    line-height: 1.5;
+    padding: 7.5px 0;
+    color: #222;
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  &__social-item {
+    display: inline-block;
+    margin: 0 0 0 17px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+
+    &:after {
+      opacity: 0.2;
+      display: block;
+      content: '';
+      width: inherit;
+      height: inherit;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100%;
+      transition: opacity 300ms;
+    }
+
+    &[class$=--insta]:after {
+      background-image: icon(social-instagram, "000000");
+    }
+
+    &[class$=--fb]:after {
+      background-image: icon(social-facebook, "000000");
+    }
+
+    &[class$=--tw]:after {
+      background-image: icon(social-twitter, "000000");
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+  }
+}
+
+
+
+
+.header--opened {
+  .dim {
+    visibility: visible;
+  }
+
+  .menu__container {
+    visibility: visible;
+  }
+
+  .menu-btn {
+    background-color: #222;
+
+    &__line {
+      background-color: #fff;
+
+      &--one {
+        transform: translate3d(0, 6px, 0) rotate(46deg);
+      }
+
+      &--two {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &--three {
+        transform: translate3d(0, -8px, 0) rotate(-46deg);
+      }
+    }
+
+    &__text--init {
+      opacity: 0;
+    }
+
+    &__text--opened {
+      opacity: 1;
+    }
+  }
+
+
 }

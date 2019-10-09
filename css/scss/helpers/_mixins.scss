@@ -4,9 +4,8 @@
 // **** Last Modified : 2018-09-05
 
 // 폰트
-@mixin font-main($weight: 500) {
+@mixin font-main {
   font-family: "Proxima", "NotoSans", AppleGothic, sans-serif, Helvetica;
-  font-weight: $weight;
 }
 
 // 글자 줄임 표시

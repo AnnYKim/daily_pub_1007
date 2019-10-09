@@ -1,4 +1,10 @@
+.text-hidden {
+  position: absolute;
+  @include text-hidden;
+}
+
 .wrap {
   max-width: 1400px;
+  padding-top: 176px;
   margin: 0 auto;
 }
