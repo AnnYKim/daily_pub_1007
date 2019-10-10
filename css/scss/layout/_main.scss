@@ -1,6 +1,9 @@
 .main-container {}
 
 .project {
+  @include res--mobile {
+    padding: 0 20px;
+  }
 
   &:after {
     //float 해제
@@ -28,6 +31,14 @@
         transform: translate(0px);
       }
     }
+
+    @include res--mobile {
+      overflow: visible;
+      width: 100%;
+      padding-top: 100%;
+      margin-bottom: 70px;
+    }
+
   }
 
   &__image {
@@ -50,10 +61,20 @@
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
+    width: 100%;
 
     @include res--tablet {
       font-size: 16px;
     }
+
+    @include res--mobile {
+      color: #222;
+      bottom: -50px;
+      height: 50px;
+      line-height: 50px;
+      left: 0;
+    }
+
   }
 
   &__detail {
@@ -80,6 +101,11 @@
       display: table-cell;
       width: 100%;
       vertical-align: middle;
+    }
+
+    @include res--tablet {
+      //태블릿 이하에선 hover 시에도 숨김
+      display: none;
     }
   }
 
@@ -126,6 +152,14 @@
   text-align: center;
   padding-top: 70px;
   padding-bottom: 60px;
+
+  @include res--tablet {
+    padding: 7% 0;
+  }
+
+  @include res--mobile {
+    padding: 0 0 44px;
+  }
 
   &__link {
     display: inline-block;

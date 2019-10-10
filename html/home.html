@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <header class="header header--opened">
-    <h1 class="logo">
+  <header class="header">
+    <h1 class=" logo">
       <a href="/" title="홈으로 이동">
         <div class="logo-main logo-svg">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
@@ -43,6 +43,14 @@
             </path>
             <path style="fill:#222222;"
               d="M74.74,65.105h-4.005c-0.621,0-1.125-0.503-1.125-1.125c0-0.621,0.504-1.125,1.125-1.125h10.559  c0.621,0,1.125,0.504,1.125,1.125c0,0.622-0.504,1.125-1.125,1.125h-4.005V77.18c0,0.704-0.57,1.275-1.274,1.275  s-1.274-0.571-1.274-1.275V65.105z">
+            </path>
+          </svg>
+        </div>
+        <div class="logo-sub logo-svg">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="38.489px" height="38.49px"
+            viewBox="0 0 38.489 38.49" style="enable-background:new 0 0 38.489 38.49;" xml:space="preserve">
+            <path style="fill:#0B21EE;"
+              d="M7.472,23.276c-1.805,0-3.502-0.703-4.778-1.98L0,18.605l2.827-2.83l2.694,2.691  c1.045,1.045,2.858,1.043,3.9,0.001l1.279-1.279c2.634-2.633,6.921-2.634,9.556,0l1.14,1.14c1.076,1.074,2.823,1.076,3.899,0  l1.14-1.14c2.635-2.634,6.921-2.633,9.556,0l2.498,2.359l-2.747,2.907l-2.538-2.398c-1.117-1.113-2.864-1.115-3.94-0.039  l-1.14,1.139c-2.637,2.635-6.922,2.634-9.556,0l-1.14-1.139c-1.076-1.075-2.825-1.074-3.899,0l-1.279,1.278  C10.975,22.573,9.277,23.276,7.472,23.276z">
             </path>
           </svg>
         </div>
@@ -202,13 +210,15 @@
             </button>
           </div>
           <div class="footer__addr-container">
-            <strong class="footer__addr-office">BUSAN OFFICE</strong>
-            <p class="footer__addr-text">
-              부산 해운대구 센텀중앙로 97 <br class="br" />
-              센텀스카이비즈 A동 1602호, 1603호 <br class="br" />
-              070-7566-1981 / 070-4454-4381<br class="br" />
-            </p>
-            <a href="" class="footer__addr-map">지도보기</a>
+            <div class="footer__addr">
+              <strong class="footer__addr-office">BUSAN OFFICE</strong>
+              <p class="footer__addr-text">
+                부산 해운대구 센텀중앙로 97 <br class="br" />
+                센텀스카이비즈 A동 1602호, 1603호 <br class="br br-mo" />
+                070-7566-1981 / 070-4454-4381<br class="br" />
+              </p>
+              <a href="" class="footer__addr-map">지도보기</a>
+            </div>
           </div>
         </div>
         <ul class="footer__social-list">
@@ -226,11 +236,14 @@
         </ul>
         <!-- <div class="facebook-like"></div> -->
         <p class="footer__copyright">
-          COPYRIGHT 2012-2019 STUDIO-JT. ALL RIGHTS RESERVED.
+          COPYRIGHT 2012-2019 STUDIO-JT. <br class="br br-mo" />ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>
   </div>
+
+  <!-- script -->
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

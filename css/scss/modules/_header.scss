@@ -1,12 +1,34 @@
+// .project,
+// .footer {
+//   display: none; //TODO:
+// }
+
+// .main {
+//   height: 4000px;
+// }
+
 .header {
   z-index: 100;
   position: fixed;
   width: 100%;
-  // height: 126px;
   padding-top: 60px;
-  // background: rgb(108, 108, 189);
-  // display: none;
+  transition: all 300ms, border 0ms;
+
+  @include res--large {
+    padding-top: 32px;
+  }
+
+  @include res--laptop {
+    height: 130px;
+    padding-top: 0;
+    background-color: #fff;
+  }
+
+  @include res--tablet {
+    height: 110px;
+  }
 }
+
 
 .welove {
   z-index: -1;
@@ -19,10 +41,22 @@
   line-height: 66px;
   letter-spacing: 0.05em;
 
+  @include res--laptop {
+    line-height: 111px;
+  }
+
+  @include res--mobile {
+    display: none;
+  }
+
   &__text {
     font-size: 16px;
     display: inline-block;
     vertical-align: middle;
+
+    @include res--tablet {
+      font-size: 13px;
+    }
   }
 
   &__icon {
@@ -34,6 +68,12 @@
     text-align: center;
     transform: scale(0.5);
 
+    @include res--tablet {
+      transform: scale(0.4);
+      width: auto;
+      margin: 3px 6px 0 6px;
+    }
+
     svg {
       animation: bounce 1600ms linear both infinite;
     }
@@ -41,14 +81,59 @@
 }
 
 .logo {
+  z-index: 400;
+  position: absolute;
+  left: 60px;
+  width: 82px;
+  height: 79px;
+  transition: all 300ms,
+    opacity 400ms;
+
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+
+  @include res--large {
+    width: 65px;
+    height: 63px;
+    left: 32px;
+  }
+
+  @include res--laptop {
+    top: 32px;
+  }
+
+  @include res--tablet {
+    width: 48px;
+    height: 48px;
+    left: 20px;
+  }
 
   &-main {
     //메인 로고
     position: absolute;
-    left: 60px;
-    width: 82px;
-    height: 79px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms,
+      opacity 400ms;
   }
+
+  &-sub {
+    //로고 서브 (물결 모양)
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms,
+      opacity 400ms;
+  }
+
 
   &__text {
     //텍스트 숨기기
@@ -73,7 +158,25 @@
   width: 66px;
   height: 66px;
   border: 1px solid #222;
-  background-color: #fff;
+  // background-color: #fff;
+  background-color: transparent;
+  transition: all 300ms, background 0ms;
+
+  @include res--large {
+    right: 32px;
+  }
+
+  @include res--laptop {
+    top: 32px;
+  }
+
+  @include res--tablet {
+    top: 39px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+  }
 
   &__text {
     position: absolute;
@@ -92,6 +195,22 @@
 
     &[class$=--opened] {
       opacity: 0;
+    }
+
+    @include res--desktop {
+      left: 10px;
+      top: auto;
+      bottom: -26px;
+    }
+
+    @include res--laptop {
+      left: -52px;
+      bottom: auto;
+      top: 50%;
+    }
+
+    @include res--tablet {
+      display: none;
     }
   }
 
@@ -113,7 +232,7 @@
     width: 100%;
     height: 3px;
     background-color: #333;
-    transition: width 150ms, transform 400ms, opacity 450ms;
+    transition: width 200ms, transform 400ms, opacity 300ms;
 
     &[class$=--one] {
       top: 0;
@@ -127,6 +246,10 @@
     &[class$=--three] {
       top: 14px;
     }
+
+    @include res--tablet {
+      height: 2px;
+    }
   }
 }
 
@@ -137,19 +260,24 @@
 }
 
 .dim {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   z-index: 300;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(34, 34, 34, .5);
   transform: translateZ(0);
-  visibility: hidden;
+  transition: all 700ms;
 }
 
 .menu__container {
   position: fixed;
+  opacity: 0;
   display: table;
   z-index: 301;
   top: 0;
@@ -159,17 +287,30 @@
   height: 100%;
   padding: 60px;
   background-color: #fff;
+  transform: translateX(100%);
+  transition: opacity 400ms, transform 400ms, visibility 400ms;
   visibility: hidden;
 
   &-inner {
     display: table-cell;
     vertical-align: middle;
+
+  }
+
+  @include res--tablet {
+    width: 100%;
+    padding: 70px 20px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 }
 
 .menu {
   &__list {
     margin-bottom: 100px;
+
+    @include res--tablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__item {
@@ -187,13 +328,10 @@
       background-color: $yellow;
       transform: translateY(-50%);
       content: '';
+
     }
 
     &:hover:after {
-      visibility: visible;
-    }
-
-    &.active:after {
       visibility: visible;
     }
   }
@@ -205,6 +343,10 @@
     color: #222;
     font-size: 30px;
     font-weight: 200;
+
+    @include res--tablet {
+      font-size: 23px;
+    }
   }
 
   &__social-item {
@@ -258,18 +400,29 @@
 
 .header--opened {
   .dim {
+    opacity: 1;
     visibility: visible;
   }
 
   .menu__container {
+    opacity: 1;
     visibility: visible;
+    transform: translateX(0);
   }
 
   .menu-btn {
     background-color: #222;
 
+    @include res--tablet {
+      background: transparent;
+    }
+
     &__line {
       background-color: #fff;
+
+      @include res--tablet {
+        background-color: #222;
+      }
 
       &--one {
         transform: translate3d(0, 6px, 0) rotate(46deg);
@@ -278,6 +431,7 @@
       &--two {
         visibility: hidden;
         opacity: 0;
+        transition: all 360ms;
       }
 
       &--three {
@@ -292,7 +446,70 @@
     &__text--opened {
       opacity: 1;
     }
+
+    .menu.active:after {
+      visibility: visible;
+    }
+  }
+
+}
+
+//헤더 축소 시
+.header--minimized {
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+
+  .logo {
+    top: 0px;
+    left: 32px;
+
+    @include res--tablet {
+      left: 20px;
+    }
+  }
+
+  .logo-main {
+    opacity: 0;
+    top: 18px;
+    width: 24px;
+    height: 24px;
+    visibility: hidden;
+  }
+
+  .logo-sub {
+    opacity: 1;
+    top: 10px;
+    width: 38px;
+    height: 38px;
+    visibility: visible;
+    transition: all 300ms,
+      opacity 500ms;
   }
 
 
+  .welove {
+    display: none;
+  }
+
+  .menu-btn {
+    top: 15px;
+    right: 32px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+
+    @include res--tablet {
+      right: 20px;
+    }
+
+    &__line {
+      background-color: #222;
+    }
+
+    &__textWrap {
+      display: none;
+    }
+  }
 }

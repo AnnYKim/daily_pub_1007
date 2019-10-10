@@ -3,8 +3,29 @@
   @include text-hidden;
 }
 
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .wrap {
   max-width: 1400px;
   padding-top: 176px;
   margin: 0 auto;
+
+  @include res--desktop {
+    max-width: none;
+    margin: 0 132px;
+    padding-top: 150px;
+  }
+
+  @include res--laptop {
+    margin: 0 32px;
+    padding-top: 130px;
+  }
+
+  @include res--tablet {
+    margin: 0;
+    padding-top: 110px;
+  }
 }
