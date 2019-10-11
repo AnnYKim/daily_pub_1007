@@ -29,3 +29,26 @@
     padding-top: 110px;
   }
 }
+
+
+.cursor {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  @include pointer-none;
+  @include select-none;
+  width: 82px;
+  height: 88px;
+  @include bgi("cursor-hand");
+  background-size: 68px 79px;
+
+  &.show {
+    display: block;
+  }
+
+  &.clicked {
+    transform: translate(-14px, -9px);
+    @include bgi("cursor-click");
+    background-size: 100%;
+  }
+}
