@@ -446,10 +446,10 @@
     &__text--opened {
       opacity: 1;
     }
+  }
 
-    .menu.active:after {
-      visibility: visible;
-    }
+  .menu__item.active:after {
+    visibility: visible;
   }
 
 }
