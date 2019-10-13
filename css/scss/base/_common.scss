@@ -52,3 +52,77 @@
     background-size: 100%;
   }
 }
+
+
+//TRANSITION!!!
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: inherit;
+  z-index: 1400;
+  @include pointer-none;
+  transform: translate3d(0, 100%, 0);
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+
+  &--blue {
+    animation-name: maskAnimation01;
+
+    .mask-box {
+      background-color: #0b21ee;
+    }
+  }
+
+  &--yellow {
+    animation-name: maskAnimation01;
+    animation-delay: 200ms;
+
+    .mask-box {
+      background-color: #fffc00;
+    }
+  }
+}
+
+.mask-container {
+  animation: maskAnimation03 5s 3s;
+}
+
+.mask-inner {
+  width: 100%;
+  height: 150%;
+  position: relative;
+}
+
+.mask-wave {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.mask-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes maskAnimation01 {
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes maskAnimation02 {
+  100% {
+    transform: translate3d(0, -20%, 0);
+  }
+}
+
+@keyframes maskAnimation03 {
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}

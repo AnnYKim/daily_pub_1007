@@ -6,10 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="../css/style.css" />
-  <title>Studio</title>
+  <title>TRANSITION</title>
 </head>
 
 <body>
+  <div class="mask mask--blue">
+    <div class="mask-inner">
+      <img class="mask-wave" src="../images/screen-wave-primary.png" alt="primary mask" />
+      <div class="mask-box"></div>
+    </div>
+  </div>
+  <div class="mask mask--yellow">
+    <div class="mask-inner">
+      <img class="mask-wave" src="../images/screen-wave-secondary.png" alt="secondary mask" />
+      <div class="mask-box"></div>
+    </div>
+  </div>
   <header class="header">
     <h1 class="logo">
       <a href="./home.html" title="홈으로 이동">
@@ -67,7 +79,7 @@
             fill="#ef3e3d" />
         </svg>
       </span>
-      <span class="welove__text">here</span>
+      <span class="welove__text">it</span>
     </div>
     <div class="dim"></div>
     <div class="menu">
@@ -85,14 +97,14 @@
       <div class="menu__container">
         <div class="menu__container-inner">
           <ul class="menu__list">
-            <li class="menu__item">
+            <li class="menu__item active">
               <a href="/" class="menu__link">프로젝트 </a>
             </li>
             <li class="menu__item">
               <a href="/" class="menu__link">제이티 이야기 </a>
             </li>
-            <li class="menu__item active">
-              <a href="/" class="menu__link">연락처 및 오시는 길 </a>
+            <li class="menu__item">
+              <a href="./contact.html" class="menu__link">연락처 및 오시는 길 </a>
             </li>
             <li class="menu__item">
               <a href="/" class="menu__link">프로젝트 의뢰하기 </a>
@@ -121,102 +133,82 @@
   <div class="wrap">
     <main class="main">
       <div class="main-container">
-        <div class="contact">
-          <div class="contact-top">
-            <div class="contact-top__intro">
-              <h2 class="contact-top__title">여기예요</h2>
-              <p class="contact-top__text">낮바다의 시간엔 물결에 찰랑이는 별무리가 떠 있고<br class="br">
-                밤하늘이 왔을 땐, 작은곰자리도 보입니다.<br class="br">
-                24시간 반짝임이 지지않는 여기에서<br class="br">
-                여러분의 프로젝트를 생각합니다.<br class="br">
-                또 고민하고 고민하는 공간 '스튜디오 제이티' 입니다.</p>
-              <button class="contact-top__btn">프로젝트 문의하기</button>
-            </div>
-            <div class="contact-top__pic">
-              그림!
-            </div>
+        <div class="project">
+          <!-- project item -->
+          <div class="project__item" style="background-image: url(../images/beraedy_studio-jt_list.jpg);">
+            <img src="../images/beraedy_studio-jt_list.jpg" alt="아모레퍼시픽" class="project__image" />
+            <a href="" class="project__link">
+              <strong class="project__title">아모레퍼시픽</strong>
+              <div class="project__detail">
+                <div class="project__detail-table">
+                  <div class="project__detail-cell">
+                    <p class="project__text">
+                      비레디 브랜드 웹사이트 제작
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-          <div class="contact-info">
-            <h2 class="text-hidden">연락처</h2>
-            <div class="view">
-              <div class="view__text-container">
-                <p class="view__text view__text--first">HERE</p>
-                <p class="view__text view__text--second">WE ARE</p>
-              </div>
-            </div>
-            <div class="office">
-              <div class="office-info office-info__busan">
-                <strong class="office-info__title">Busan office</strong>
-                <p class="office-info__text">부산 해운대구 센텀중앙로 97<br class="br" />
-                  센텀스카이비즈 A동 1602호, 1603호</p>
-                <div class="office-info__contact">
-                  <p class="office-info__mail">
-                    <strong class="office-info__title-small">mail</strong>
-                    <a href="mailto:contact@studio-jt.co.kr">contact@studio-jt.co.kr</a>
-                  </p>
-                  <p class="office-info__tel">
-                    <strong class="office-info__title-small">tel</strong>
-                    <a href="tel:070-7566-1981">070-7566-1981</a>
-                  </p>
+          <!-- //project item -->
+          <!-- project item -->
+          <div class="project__item" style="background-image: url(../images/BRO-main_V2.jpg);">
+            <img src="../images/BRO-main_V2.jpg" alt="이미지" class="project__image" />
+            <a href="" class="project__link">
+              <strong class="project__title">아모레퍼시픽</strong>
+              <div class="project__detail">
+                <div class="project__detail-table">
+                  <div class="project__detail-cell">
+                    <p class="project__text">
+                      브로앤팁스 반응형 웹 제작
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="office-info office-info__seoul">
-                <strong class="office-info__title">Seoul branch</strong>
-                <p class="office-info__text">서울특별시 마포구 서교동 379-13 4층<br class="br" />
-                  매주 수, 목 미팅 가능합니다.</p>
-                <div class="office-info__contact">
-                  <p class="office-info__mail">
-                    <strong class="office-info__title-small">mail</strong>
-                    <p class="slash">//</p>
-                    <a href="mailto:contact@studio-jt.co.kr">contact@studio-jt.co.kr</a>
-                  </p>
-                  <p class="office-info__tel">
-                    <strong class="office-info__title-small">tel</strong>
-                    <p class="slash">//</p>
-                    <a href="tel:070-7566-1981">070-7566-1981</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="teams">
-              <div class="team-info team-info__planning">
-                <div class="team-info__title">Planning Team</div>
-                <div class="team-info__contact">
-                  <strong class="office-info__title-small">phone</strong>
-                  <p class="slash">/</p>
-                  <a href="tel:070-4453-1234">070-4453-1234</a>
-                </div>
-              </div>
-              <div class="team-info team-info__blank"></div>
-              <div class="team-info team-info__developer">
-                <div class="team-info__title">Developer Team</div>
-                <div class="team-info__contact">
-                  <strong class="office-info__title-small">phone</strong>
-                  <p class="slash">/</p>
-                  <a href="tel:070-4453-5678">070-4453-5678</a>
-                </div>
-              </div>
-              <div class="team-info team-info__design">
-                <div class="team-info__title">Design Team</div>
-                <div class="team-info__contact">
-                  <strong class="office-info__title-small">phone</strong>
-                  <p class="slash">/</p>
-                  <a href="tel:070-4453-9012">070-4453-9012</a>
-                </div>
-              </div>
-            </div>
-            <div class="careers">
-              <h2>Careers</h2>
-              <div class="careers__contact">
-                <strong class="office-info__title-small">mail</strong>
-                <p class="slash">//</p>
-                <a href="mailto:sexy@studio-jt.co.kr">sexy@studio-jt.co.kr</a>
-              </div>
-              <button class="careers__btn">입사 지원하기</button>
-            </div>
+            </a>
           </div>
-          <div class="characters">
-            캐릭터들!!
+          <!-- //project item -->
+          <!-- project item -->
+          <div class="project__item" style="background-image: url(../images/studio-jt-lirikosmarine-2.jpg);">
+            <img src="../images/studio-jt-lirikosmarine-2.jpg" alt="아모레퍼시픽" class="project__image" />
+            <a href="" class="project__link">
+              <strong class="project__title">아모레퍼시픽</strong>
+              <div class="project__detail">
+                <div class="project__detail-table">
+                  <div class="project__detail-cell">
+                    <p class="project__text">
+                      리리코스 마린에너지 INT 반응형웹 제작 사례
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //project item -->
+          <!-- project item -->
+          <div class="project__item" style="background-image: url(../images/portfolio_cubeme_thumbnail-3-1.jpg);">
+            <img src="../images/portfolio_cubeme_thumbnail-3-1.jpg" alt="이미지" class="project__image" />
+            <a href="" class="project__link">
+              <strong class="project__title">아모레퍼시픽</strong>
+              <div class="project__detail">
+                <div class="project__detail-table">
+                  <div class="project__detail-cell">
+                    <p class="project__text">
+                      큐브미 브랜드 웹사이트 디자인 개편
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //project item -->
+        </div>
+        <div class="loader">
+          <div class="loader-container">
+            <a class="loader__link">
+              <p class="loader__text">LOAD MORE</p>
+              <p class="loader__count">( 18/57 )</p>
+            </a>
           </div>
         </div>
       </div>
@@ -263,6 +255,7 @@
       </div>
     </footer>
   </div>
+  <div class="cursor"></div>
   <!-- script -->
   <script src="../js/script.js"></script>
 </body>
