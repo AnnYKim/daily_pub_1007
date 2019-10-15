@@ -121,3 +121,75 @@
     transform: matrix3d(2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
+
+
+@keyframes char_dance_body {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes char_dance_arm_left {
+  0% {
+    transform: rotate(-26deg);
+  }
+
+  100% {
+    transform: rotate(26deg);
+  }
+}
+
+@keyframes char_dance_arm_right {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes wave_move_1 {
+
+  0% {
+    background-position: 0px 0;
+  }
+
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+@keyframes wave_move_2 {
+  0% {
+    background-position: 30px 0;
+  }
+
+  100% {
+    background-position: 0px 0;
+  }
+}
+
+.hello__char-body {
+  animation: char_dance_body 4s infinite alternate linear;
+}
+
+.hello__char-arms-container {
+  animation: char_dance_arm_left 4s infinite alternate ease-in;
+}
+
+.hello__wave:nth-child(even) {
+  animation: wave_move_1 3s infinite alternate ease-in-out;
+}
+
+.hello__wave:nth-child(odd) {
+  animation: wave_move_2 3s infinite alternate ease-in-out;
+}
+
+// .hello__char-arms--right {
+//   animation: char_dance_arm_left 4s infinite alternate ease-in;
+// }

@@ -59,12 +59,158 @@
     }
   }
 
-  &__pic {
+  &__hello {
+    position: relative;
     float: left;
     width: 60%;
-    background: #fafafa;
+    background-color: #fff;
+  }
+
+}
+
+.hello {
+
+  &__wave-container {
+    position: relative;
+    margin-top: 50px;
+    background-color: #fff;
+  }
+
+  &__wave {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    @include bgi("location_wave");
+    // background-size: contain;
+    background-repeat: repeat-x;
+
+    &:nth-child(4) {
+      z-index: 2;
+    }
+
+    &:nth-child(5) {
+      z-index: 3;
+    }
+  }
+
+  &__char-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: 2px solid gold;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__char {
+    display: none;
+    position: absolute;
+    width: 300px;
+    overflow: hidden;
+
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-body {
+      transform-origin: center;
+      position: absolute;
+      top: 120px;
+      left: 100px;
+      width: 130px;
+      height: 182px;
+      background-repeat: no-repeat;
+      outline: 2px solid gold;
+    }
+
+    &-arms-container {
+      position: relative;
+      z-index: 1;
+      top: 6px;
+      left: 93px;
+      width: 120px;
+      height: 200px;
+      outline: 2px solid rgb(77, 205, 57);
+      transform-origin: 50% 99%;
+    }
+
+    &-arms {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-repeat: no-repeat;
+
+      &--right {
+        top: 0px;
+        left: 1px;
+        // outline: 2px solid rgb(211, 197, 198);
+        // transform: rotate(-26deg);
+        transform-origin: 40% 100%;
+      }
+
+      &--left {
+        top: 1px;
+        left: 62px;
+        // outline: 2px solid rgb(177, 34, 233);
+        // transform: rotate(-26deg);
+        transform-origin: 40% 100%;
+      }
+    }
+
+    $char-img-path: "../images/characters/character-";
+
+    &--kms {
+
+      top: -30px;
+      left: 0px;
+      height: 300px;
+
+      .hello__char-body {
+        background-image: url("#{$char-img-path}kms-body.png");
+      }
+
+      .hello__char-arms--right {
+        background-image: url("#{$char-img-path}kms-right.png");
+      }
+
+
+      .hello__char-arms--left {
+        background-image: url("#{$char-img-path}kms-left.png");
+      }
+
+    }
+
+    &--jin {
+      display: none;
+      // z-index: 2;
+      // top: 30px;
+      // left: 180px;
+      // height: 290px;
+
+      // .hello__char-body {
+      //   background-image: url("#{$char-img-path}jin-body.png");
+      // }
+
+      // .hello__char-arms-container {
+      //   left: 100px;
+      // }
+
+      // .hello__char-arms--right {
+      //   top: 0px;
+      //   left: 0px;
+      //   background-image: url("#{$char-img-path}jin-right.png");
+      // }
+
+      // .hello__char-arms--left {
+      //   background-image: url("#{$char-img-path}jin-left.png");
+      // }
+    }
   }
 }
+
+//end of .hello
 
 .contact-info {
 
@@ -279,7 +425,8 @@
   //end of .teams
 
   .contact-bottom {
-    padding-top: 120px;
+    padding-top: 10%;
+    padding-bottom: 8%;
     @include bgi("img-careers-bg", "jpg");
     background-repeat: repeat-y;
   }
@@ -360,6 +507,7 @@
 
     .characters {
       outline: 3px solid gold;
+
     }
 
   }
