@@ -76,4 +76,43 @@
   window.addEventListener("scroll", scrollHandler);
   menuBtn.addEventListener("click", menuClickHandler);
   dimElem.addEventListener("click", dimClickHandler);
+
+
+  var fish01 = document.querySelector(".hello__fish--one"),
+    fish02 = document.querySelector(".hello__fish--two")
+  path = [{
+      x: 0,
+      y: 0
+    }, {
+      x: 125,
+      y: -40,
+      rotation: 30,
+      scale: 2
+    }, {
+      x: 250,
+      y: 0
+    }],
+    path2 = [{
+      x: 0,
+      y: 0
+    }, {
+      x: 125,
+      y: 80
+    }, {
+      x: 250,
+      y: 0
+    }]
+  tl = new TimelineMax({
+    repeat: -1,
+    yoyo: true
+  });
+
+
+  // tl.to(fish01, 1, {
+  //   bezier: {
+  //     curviness: 1,
+  //     values: path
+  //   },
+  //   ease: Power1.easeInOut
+  // })
 }())

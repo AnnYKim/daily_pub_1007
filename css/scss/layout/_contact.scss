@@ -77,20 +77,80 @@
   }
 
   &__wave {
+    z-index: 5;
     position: relative;
     width: 100%;
     height: 60px;
     @include bgi("location_wave");
     // background-size: contain;
     background-repeat: repeat-x;
+    background-color: #fff;
 
+    &:nth-child(1) {
+      z-index: 10;
+      background-color: transparent;
+    }
+
+    &:nth-child(3),
     &:nth-child(4) {
-      z-index: 2;
+      z-index: 1;
+      background-color: transparent;
     }
 
     &:nth-child(5) {
-      z-index: 3;
+      z-index: 10;
+      background-color: transparent;
     }
+
+    // &:nth-child(2) {
+    //   background-color: #fff;
+    // }
+
+    // &:nth-child(3) {
+    //   background-color: #fff;
+    // }
+
+    // &:nth-child(4) {
+    //   background-color: #fff;
+    // }
+  }
+
+  &__fish-container {
+    z-index: 3;
+  }
+
+  &__fish-container--one {
+    top: -100px;
+    left: 40px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    .hello__fish {
+      @include bgi("img-fish-01", "svg");
+    }
+  }
+
+  &__fish-container--two {
+    top: 140px;
+    left: -40px;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+
+    .hello__fish {
+      @include bgi("img-fish-02", "svg");
+    }
+  }
+
+
+  &__fish {
+    display: block;
+    position: absolute;
+    top: 81px;
+    left: 232px;
+    width: 62px;
+    height: 47px;
   }
 
   &__char-container {
