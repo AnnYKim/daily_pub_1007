@@ -14,6 +14,11 @@
   &__intro {
     float: left;
     width: 40%;
+
+    @include res--laptopSM {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -21,6 +26,11 @@
     font-size: 60px;
     line-height: 1.75;
     font-weight: 200;
+
+    @include res--laptopSM {
+      margin: 0 0 25px;
+      font-size: 50px;
+    }
   }
 
   &__text {
@@ -28,6 +38,16 @@
     font-size: 14px;
     line-height: 2.15;
     font-weight: 500;
+
+    @include res--laptopSM {
+      margin-bottom: 25px;
+    }
+
+    .br-lg {
+      @include res--laptopSM {
+        display: none;
+      }
+    }
   }
 
   &__btn {
@@ -122,8 +142,8 @@
   &__fish-container--one {
     top: -100px;
     left: 40px;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 115%;
     position: absolute;
 
     .hello__fish {
@@ -137,6 +157,8 @@
     width: 90%;
     height: 100%;
     position: absolute;
+    opacity: 0;
+    transform: rotate(180deg);
 
     .hello__fish {
       @include bgi("img-fish-02", "svg");
