@@ -7,6 +7,18 @@
   margin: 0 auto 115px;
   max-width: 1100px;
 
+  @include res--laptopSM {
+    margin-bottom: 80px;
+  }
+
+  @include res--tablet {
+    margin: 0 20px 50px;
+  }
+
+  @include res--mobile {
+    margin: 0 20px 40px;
+  }
+
   &:after {
     @include floatClear;
   }
@@ -16,6 +28,8 @@
     width: 40%;
 
     @include res--laptopSM {
+      float: none;
+      display: block;
       width: 100%;
       margin-bottom: 20px;
     }
@@ -31,6 +45,12 @@
       margin: 0 0 25px;
       font-size: 50px;
     }
+
+    @include res--tablet {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
   }
 
   &__text {
@@ -41,6 +61,15 @@
 
     @include res--laptopSM {
       margin-bottom: 25px;
+    }
+
+    @include res--laptopSM {
+      margin-bottom: 25px;
+    }
+
+    @include res--tablet {
+      font-weight: 200;
+      line-height: 2;
     }
 
     .br-lg {
@@ -77,6 +106,15 @@
       background-color: transparent;
       background-image: icon(arrow-right, "0b21ee");
     }
+
+    @include res--laptopSM {
+      width: auto;
+      min-width: 170px;
+      height: 55px;
+      line-height: 51px;
+      font-size: 14px;
+      background-position: right 24px top 50%;
+    }
   }
 
   &__hello {
@@ -84,6 +122,10 @@
     float: left;
     width: 60%;
     background-color: #fff;
+
+    @include res--laptopSM {
+      display: none;
+    }
   }
 
 }
@@ -102,7 +144,6 @@
     width: 100%;
     height: 60px;
     @include bgi("location_wave");
-    // background-size: contain;
     background-repeat: repeat-x;
     background-color: #fff;
 
@@ -121,18 +162,6 @@
       z-index: 10;
       background-color: transparent;
     }
-
-    // &:nth-child(2) {
-    //   background-color: #fff;
-    // }
-
-    // &:nth-child(3) {
-    //   background-color: #fff;
-    // }
-
-    // &:nth-child(4) {
-    //   background-color: #fff;
-    // }
   }
 
   &__fish-container {
@@ -145,10 +174,18 @@
     width: 90%;
     height: 115%;
     position: absolute;
+    // outline: 3px solid gold;
 
     .hello__fish {
       @include bgi("img-fish-01", "svg");
     }
+
+    // @include res--laptopSM {
+    //   left: auto;
+    //   right: 40px;
+    //   width: 50%;
+    //   height: 130%;
+    // }
   }
 
   &__fish-container--two {
@@ -163,6 +200,12 @@
     .hello__fish {
       @include bgi("img-fish-02", "svg");
     }
+
+    // @include res--laptopSM {
+    //   left: -10px;
+    //   width: 50%;
+    //   height: 120%;
+    // }
   }
 
 
@@ -305,6 +348,7 @@
     @include bgi("img-company-view", "jpg");
     // background-attachment: fixed;
     background-size: cover;
+    background-position: 50% 30%;
 
     &__text-container {
       position: absolute;
@@ -330,7 +374,9 @@
         @include res--laptop {
           left: 0;
           padding-left: 0.55em;
-          font-size: 100px;
+          // font-size: 100px;
+          top: 11vw;
+          font-size: 8vw;
           letter-spacing: 0.55em;
         }
       }
@@ -343,8 +389,58 @@
 
         @include res--laptop {
           right: 0;
-          font-size: 100px;
           letter-spacing: 0.55em;
+          // font-size: 100px;
+          top: 23vw;
+          font-size: 8vw;
+          letter-spacing: 0.55em;
+        }
+      }
+    }
+
+    &__hand {
+      // width: 127px;
+      // height: 192px;
+      width: 220px;
+      height: 240px;
+      // outline: 4px solid red;
+      position: absolute;
+      overflow: hidden;
+      // bottom: 212px;
+      // right: 146px;
+      bottom: 100px;
+      right: 90px;
+      // transform: rotate(-20deg) translate(0px, 0px);
+
+      // @include res--laptop {
+      //   bottom: 50px;
+      //   right: 10px
+      // }
+
+      @include res--laptop {
+        width: 11.458333333333332VW;
+        height: 12.5VW;
+        bottom: 10vw;
+        right: 8vw;
+        // width: 7vw;
+        // height: 10.5vw;
+        // bottom: 8vw;
+        // right: 2vw;
+      }
+
+      .img-hand {
+        position: absolute;
+        top: 10px;
+        left: 140px;
+        width: inherit;
+        height: inherit;
+        // background: yellow;
+        @include bgi("img-hand");
+        background-size: contain;
+
+        @include res--laptop {
+          top: 0.5208333333333333VW;
+          left: 7.291666666666667VW;
         }
       }
     }
@@ -372,28 +468,63 @@
       background-repeat: no-repeat;
       background-position: 50% 100px;
 
+      @include res--tablet {
+        height: inherit;
+        padding: 14% 5% 10% 5%;
+        background-position: 50% 70px;
+      }
+
+      @include res--mobile {
+        float: none;
+        display: block;
+        width: 100%;
+        padding: 70px 5% 35px 5%;
+        background-position: 50% 55px;
+      }
+
       &__title {
         display: inline-block;
         position: relative;
         font-size: 25px;
         font-weight: 600;
         line-height: 1.8;
+
+        @include res--tablet {
+          font-size: 20px;
+        }
       }
 
       &__text {
         font-size: 15px;
         line-height: 1.7;
+
+        @include res--tablet {
+          font-size: 13px;
+        }
       }
 
       &__contact-container {
         margin-top: 90px;
         font-size: 14px;
         font-weight: 400;
+
+        @include res--tablet {
+          margin-top: 50px;
+        }
+
+        @include res--mobile {
+          margin-top: 40px;
+        }
       }
 
       &__contact {
         display: inline-block;
         margin: 0 15px;
+
+        @include res--mobile {
+          display: block;
+          margin: 5px 0;
+        }
 
         &-title {
           display: inline-block;
@@ -449,10 +580,40 @@
       background-color: #fff;
       background-position: 50px 54%;
 
+      @include res--laptop {
+        background-position: 16% 25%;
+      }
+
+      @include res--laptopSM {
+        background-size: 20px 20px;
+      }
+
+      @include res--tablet {
+        padding: 16.666%;
+      }
+
+      @include res--mobile {
+        width: 100%;
+        padding: 60px 0 30px;
+        text-align: center;
+        background-position: 50% 32px;
+      }
+
       &__text {
         position: absolute;
         left: 50px;
         bottom: 51px;
+
+        @include res--laptop {
+          left: 15%;
+          bottom: 15%;
+        }
+
+        @include res--mobile {
+          position: relative;
+          left: 0;
+          bottom: 0;
+        }
       }
 
       &__title {
@@ -461,6 +622,10 @@
         font-size: 18px;
         font-weight: 800;
         margin-bottom: 17px;
+
+        @include res--laptop {
+          font-size: 17px;
+        }
       }
 
       &__contact {
@@ -470,16 +635,32 @@
           font-size: 15px;
           font-weight: 500;
 
+          @include res--laptop {
+            font-size: 14px;
+          }
+
           &:after {
             display: inline-block;
             content: '/';
-            padding: 0 1px 0 4px;
+            padding: 0 4px 0 4px;
           }
         }
 
         &-tel {
-          font-size: 14px;
+          font-size: x;
           font-weight: 300;
+        }
+
+        .br-sm {
+          display: none;
+
+          @include res--laptopSM {
+            display: block;
+          }
+
+          @include res--mobile {
+            display: none;
+          }
         }
       }
 
@@ -491,6 +672,11 @@
       &--blank {
         @include bgi("img-wave-bg");
         background-position: 0 0;
+        background-size: 100%;
+
+        @include res--tablet {
+          display: none;
+        }
       }
 
       &--developer {
@@ -511,6 +697,15 @@
     padding-bottom: 8%;
     @include bgi("img-careers-bg", "jpg");
     background-repeat: repeat-y;
+
+    @include res--tablet {
+      padding-top: 15%;
+    }
+
+    @include res--mobile {
+      padding-top: 20%;
+      padding-bottom: 5%;
+    }
   }
 
   .careers {
@@ -537,6 +732,10 @@
         background-image: icon(wave, "0b21ee");
         background-repeat: no-repeat;
         background-position: 50% 50%;
+      }
+
+      @include res--tablet {
+        font-size: 20px;
       }
     }
 
@@ -585,10 +784,20 @@
         background-color: transparent;
         background-image: icon(arrow-right, "0b21ee");
       }
+
+      @include res--laptopSM {
+        width: auto;
+        min-width: 170px;
+        padding-left: 30px;
+        height: 55px;
+        line-height: 51px;
+        font-size: 14px;
+        background-position: right 24px top 50%;
+      }
     }
 
     .characters {
-      outline: 3px solid gold;
+      // outline: 3px solid gold;
 
     }
 
