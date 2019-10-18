@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#bg {
+  position: absolute;
+  top: 50vw;
+  width: 100%;
+  height: 50vw;
+  background: #f7292985;
+  pointer-events: none;
+}
+
+/* 
+.details01 {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(http://unsplash.it/1200?image=101);
+  background-size: cover;
+}
+
+h1 {
+  font-size: 30px;
+  color: #fff;
+}
+
+p {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.text {
+  padding: 40px;
+  overflow: auto;
+  height: calc(100vh - 80px);
+} */
+
+
+/* body.test {
+  background-color: #333;
+  color: #fff;
+}
+
+body.test a {
+  color: mediumseagreen;
+  font-family: monospace;
+} */
+
+body.test {
+  padding: 30px;
+}
+
+#barba-wrapper {
+  padding: 10px;
+  outline: 1px solid #bbb;
+}
+
+#barba-wrapper>h2 {
+  margin-bottom: 10px;
+}
+
+.barba-container {
+  padding: 10px;
+  outline: 1px dashed deeppink;
+  color: #222;
+}
+
+.barba-container>h2 {
+  margin-bottom: 20px;
+}
+
+.barba-container a+p {
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.barba-container p:last-child {
+  margin-bottom: 10px;
+}
+
+.barba-container a {
+  display: block;
+  font-size: 15px;
+  margin: 8px 0 4px;
+  color: rgb(24, 206, 136);
+}
+
+body.test em {
+  display: block;
+  margin: 4px 0;
+  color: #aaa;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+em {
+  display: none !important;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>111111</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .intro-thumb {
+      display: block;
+      height: 25vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .full {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    a.back {
+      color: aqua;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .barba-container {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    #test {
+      position: absolute;
+      top: 50vw;
+      width: 100%;
+      height: 50vw;
+      background: #f7292985;
+      pointer-events: none;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="barba-wrapper">
+    <div class="barba-container" data-namespace="detail">
+      <div class="full" style="background-image: url(http://unsplash.it/800/600?image=189);"></div>
+      <div class="fixed">
+        <h1>11111</h1>
+        <p>Culpa ut veniam reprehenderit Lorem deserunt ullamco nostrud aute do. Et sint non irure fugiat qui duis
+          consequat eiusmod officia fugiat officia enim consequat nulla. Proident officia ad velit labore non dolore et.
+          Qui reprehenderit ex minim consectetur. Amet proident in do eu est laborum in laboris commodo.</p>
+      </div>
+      <a class="back" href="barba.html">Go back</a>
+    </div>
+  </main>
+  <div id="test"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="grid.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
+
+</html>

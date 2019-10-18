@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     start: function () {
       console.log("start");
       // this.newContainerLoading.then(this.fadeIn.bind(this));
+      // As soon the loading is finished and the old page is faded out, let's fade the new page
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
         .then(this.fadeIn.bind(this));
@@ -15,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
       TweenMax.to(oc, 0.3, {
         opacity: 0,
         onComplete: function () {
-          console.log("tween complete");
-          // _this.promise();
+          console.log("fadeout complete");
+
         }
-      })
+      });
+      // return 
     },
     fadeIn: function () {
       console.log("finish");
@@ -26,12 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
       var oc = this.oldContainer;
       var nc = this.newContainer;
       oc.style.display = "none";
-      oc.style.visibility = "hidden";
       nc.style.visibility = "visible";
       TweenMax.from(nc, 2, {
         opacity: 0,
         onComplete: function () {
-          console.log("tween complete");
+          console.log("fadein complete");
           _this.done();
         }
       })
@@ -57,5 +58,5 @@ document.addEventListener("DOMContentLoaded", function () {
   Barba.Pjax.getTransition = function () {
     return transEffect;
   };
-  Barba.Pjax.start();
+  // Barba.Pjax.start();
 });

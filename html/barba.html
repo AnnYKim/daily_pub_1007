@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Barba.js</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .intro-thumb {
+      display: block;
+      height: 25vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .full {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    a.back {
+      color: aqua;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .barba-container {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    #test {
+      position: absolute;
+      top: 0vw;
+      width: 50%;
+      height: 300px;
+      background: #f7292985;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="barba-wrapper">
+    <div class="barba-container" data-namespace="grid">
+      <a class="intro-thumb" href="./barba-link-1.html">
+        <div class="full" style="background-image: url(http://unsplash.it/800/600?image=101);">
+          <p>Details 01</p>
+        </div>
+      </a>
+      <a class="intro-thumb" href="2.html">
+        <div class="full" style="background-image: url(http://unsplash.it/800/600?image=431);"></div>
+      </a>
+      <a class="intro-thumb" href="https://vid3d.net">
+        <div class="full" style="background-image: url(http://unsplash.it/800/600?image=220);"></div>
+      </a>
+      <a class="intro-thumb" href="https://nykim.net">
+        <div class="full" style="background-image: url(http://unsplash.it/800/600?image=101);"></div>
+      </a>
+    </div>
+    <h2>나는 barba-container밖에 있어!!!</h2>
+  </main>
+  <p>나는 barba wrapper밖에 있어!!!!!!!!</p>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="grid.js"></script>
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    Barba.Pjax.init();
+    var transEffect = Barba.BaseTransition.extend({
+      start: function () {
+        this.newContainerLoading.then(val => this.fadeInNewcontent(this.newContainer));
+      },
+      fadeInNewcontent: function (nc) {
+        nc.style.display == "none";
+        var _this = this;
+        this.oldContainer.promise().done(() => {
+          nc.setProperty("visibility", "visibile");
+          TweenMax.from(nc, 0.3, {
+            opacity: 0,
+            onComplete: function () {
+              _this.done();
+            }
+          });
+        })
+      }
+    });
+    Barba.Pjax.getTransition = function () {
+      return transEffect;
+    };
+    Barba.Pjax.start();
+  });
+</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
+
+</html>
