@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0,
         onComplete: function () {
           console.log("fadeOUt complete");
-          $(_this).remove();
+          // $(_this).remove();
           deferred.resolve();
         }
       })

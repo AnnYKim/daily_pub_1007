@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   var is_animating = false;
-  console.log("!");
-
   // Prevent current url to reload page
   // $('a[href]').on('click', function (e) {
   //   if (e.currentTarget.href === window.location.href) {
