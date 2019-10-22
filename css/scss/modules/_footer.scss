@@ -1,9 +1,10 @@
 .footer {
   color: #8f8f8f;
-  background-color: #222;
+  background-color: #fff;
 
   &-container {
     padding: 80px 150px;
+    background-color: #222;
 
     @include res--desktop {
       padding: 80px 8%;
