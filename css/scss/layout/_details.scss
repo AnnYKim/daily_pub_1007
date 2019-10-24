@@ -91,6 +91,11 @@
     padding: 0 160px;
     max-width: 1400px;
     margin: 0 auto;
+
+    @include res--laptop {
+      max-width: 940px;
+      padding: 0 50px;
+    }
   }
 
   &__cell {
@@ -106,6 +111,14 @@
     line-height: 1.6;
     word-break: break-all;
     text-transform: uppercase;
+
+    @include res--laptop {
+      font-size: 50px;
+    }
+    @include res--laptopSM {
+      font-size: 45px;
+      letter-spacing: 0.4em;
+    }
 
     &-text {
       display: block;
@@ -249,7 +262,7 @@
   padding-bottom: 160px;
 
   @include res--laptop {
-    padding-top: 100px;
+    padding: 100px 40px 120px;
   }
 
   &__background {
@@ -325,6 +338,27 @@
     }
   }
 } //end of .projectVideo
+
+.projectIcons {
+  margin: 60px auto 60px;
+  max-width: 1100px;
+  &:after {
+    @include floatClear;
+  }
+  &__item {
+    float: left;
+    width: 20%;
+    margin-top: 46px;
+  }
+  &__image {
+    // display: inline-block;
+    display: block;
+    max-width: 80%;
+    height: auto;
+    // vertical-align: middle;
+    margin: 0 auto;
+  }
+} //end of .projectIcons
 
 .projectDetails {
   max-width: 700px;
