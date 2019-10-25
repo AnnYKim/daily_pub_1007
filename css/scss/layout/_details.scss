@@ -132,6 +132,9 @@
     @include res--mobile {
       font-size: 32px;
     }
+    @include res--mobileSM {
+      font-size: 29px;
+    }
 
     &-text {
       display: block;
@@ -171,9 +174,9 @@
   width: 100%;
   margin-top: calc(100vh - 130px);
   padding-top: 120px;
-  // padding-bottom: 20px;
 
   @include res--tablet {
+    padding-top: 10%;
     margin-top: calc(100vh - 110px);
   }
 }
@@ -187,11 +190,21 @@
   max-width: 700px;
   margin: 0 auto;
 
+  @include res--tablet {
+    padding: 0 32px;
+  }
+
   &__title {
     font-size: 34px;
     line-height: 1.25;
     margin-bottom: 24px;
     font-weight: 800;
+    text-transform: uppercase;
+
+    @include res--tablet {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
   }
 
   &__summary {
@@ -207,6 +220,10 @@
 
     &:first-child {
       margin-left: 0;
+    }
+    @include res--tablet {
+      width: 31%;
+      margin-left: 3.5%;
     }
   }
 
@@ -233,9 +250,15 @@
     font-size: 14px;
     color: #444;
     line-height: 2.2;
-    font-weight: 500;
+    font-weight: 400;
     font-family: "NotoSans";
 
+    @include res--tablet {
+      line-height: 2.3;
+      br {
+        display: none;
+      }
+    }
     strong {
       font-weight: inherit;
       background: #fffd7f;
