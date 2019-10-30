@@ -378,6 +378,10 @@
 .projectIcons {
   margin: 60px auto 60px;
   max-width: 1100px;
+  @include res--tablet {
+    margin: 5% auto;
+    padding: 0 16px;
+  }
   &:after {
     @include floatClear;
   }
@@ -401,6 +405,10 @@
   margin: 0 auto;
   padding-top: 100px;
 
+  @include res--tablet {
+    padding: 10% 32px 5%;
+  }
+
   &__title {
     display: block;
     margin-bottom: 26px;
@@ -409,6 +417,10 @@
     text-align: left;
     line-height: 1.45;
     color: #222;
+
+    @include res--tablet {
+      font-size: 22px;
+    }
   }
 
   &__text {
@@ -418,12 +430,24 @@
     text-align: left;
     line-height: 2.2;
     color: #444;
+    @include res--tablet {
+      br {
+        display: none;
+      }
+      .br-ta {
+        display: block;
+      }
+    }
   }
 } //end of .projectDetails
 
 .projectImg {
   max-width: 1902px;
   margin: 60px auto;
+
+  @include res--tablet {
+    margin: 5% 0;
+  }
 
   .image {
     width: 100%;
@@ -578,6 +602,10 @@
   padding: 100px 0 12px 0;
   max-width: 700px;
   margin: 0 auto 162px;
+  @include res--tablet {
+    padding: 0 32px;
+    margin-bottom: 12%;
+  }
 
   &__title {
     font-size: 26px;
@@ -684,6 +712,10 @@
       color: #444;
       transition: color 300ms;
 
+      @include res--tablet {
+        font-weight: 300;
+      }
+
       &:before,
       &:after {
         position: absolute;
@@ -732,12 +764,23 @@
   padding: 0 32px;
   height: 226px;
 
+  @include res--tablet {
+    height: auto;
+    padding: 0px;
+  }
+
   &__btn {
     position: relative;
     overflow: hidden;
     display: inline-block;
     width: 50%;
     height: 100%;
+
+    @include res--tablet {
+      border: 1px solid red;
+      // padding: 20px;
+      height: 63px;
+    }
 
     &:after {
       position: absolute;
@@ -872,6 +915,15 @@
     &:hover {
       color: #222;
       background-color: rgba(255, 255, 255, 1);
+    }
+
+    @include res--tablet {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      width: 20%;
+      background: darkcyan;
     }
   }
 } //end of .projectMember
