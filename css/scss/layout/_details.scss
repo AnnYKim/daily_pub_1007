@@ -162,7 +162,7 @@
       content: "";
       width: 37px;
       height: 60px;
-      background-color: #000;
+      // background-color: #000;
     }
   }
 }
@@ -193,6 +193,9 @@
   @include res--tablet {
     padding: 0 32px;
   }
+  @include res--mobile {
+    padding: 0 20px;
+  }
 
   &__title {
     font-size: 34px;
@@ -210,6 +213,10 @@
   &__summary {
     padding: 13px 0 40px;
     font-size: 0;
+
+    @include res--mobile {
+      padding: 20px 0 10px;
+    }
   }
 
   &__list {
@@ -225,6 +232,11 @@
       width: 31%;
       margin-left: 3.5%;
     }
+    @include res--mobile {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__list-title {
@@ -236,6 +248,12 @@
     margin-bottom: 12px;
     border-bottom: 3px solid #222;
     line-height: 1.25;
+    @include res--mobile {
+      padding-bottom: 8px;
+      margin-bottom: 5px;
+      border-bottom-width: 1px;
+      border-bottom-color: #ccc;
+    }
   }
 
   &__list-text {
@@ -287,6 +305,13 @@
       background-color: #fff;
       background-image: icon(arrow-right, "222222");
     }
+    @include res--tablet {
+      width: 194px;
+      height: 48px;
+      padding: 0 40px 0 20px;
+      line-height: 44px;
+      background-position: right 20px top 50%;
+    }
   }
 } //end of .projectInfo
 
@@ -298,7 +323,14 @@
   padding-bottom: 160px;
 
   @include res--laptop {
-    padding: 100px 40px 120px;
+    padding: 90px 40px 120px;
+  }
+
+  @include res--tablet {
+    padding: 10% 30px 12%;
+  }
+  @include res--mobile {
+    padding: 10% 20px 5%;
   }
 
   &__background {
@@ -309,12 +341,19 @@
     width: 100%;
     // height: 300px;
     height: 645px;
-    outline: 3px solid red;
+    // outline: 3px solid red;
     // background-color: #d5ccbd;
     background-color: #eceee1;
 
     @include res--laptop {
       height: 73%;
+    }
+    @include res--tablet {
+      height: 60%;
+    }
+    @include res--mobile {
+      height: 50%;
+      min-height: 150px;
     }
   }
 
@@ -328,6 +367,15 @@
     background: #f4f4f4;
     border-radius: 28px;
 
+    @include res--tablet {
+      padding: 20px;
+      border-radius: 20px;
+    }
+    @include res--mobile {
+      padding: 14px;
+      border-radius: 10px;
+    }
+
     &:after {
       display: block;
       content: "";
@@ -338,6 +386,17 @@
       left: 50%;
       margin-left: -266px;
       @include bgi("project-video-pc");
+
+      @include res--laptopSM {
+        height: 105px;
+        bottom: -105px;
+        background-size: auto 100%;
+        background-position: 50% 50%;
+      }
+      @include res--mobile {
+        height: 50px;
+        bottom: -50px;
+      }
     }
   }
 
@@ -378,10 +437,16 @@
 .projectIcons {
   margin: 60px auto 60px;
   max-width: 1100px;
+
   @include res--tablet {
     margin: 5% auto;
-    padding: 0 16px;
+    padding: 0 20px;
   }
+
+  @include res--mobile {
+    // margin-top: 0;
+  }
+
   &:after {
     @include floatClear;
   }
@@ -389,6 +454,10 @@
     float: left;
     width: 20%;
     margin-top: 46px;
+
+    &:nth-child(-n + 5) {
+      margin-top: 0;
+    }
   }
   &__image {
     // display: inline-block;
@@ -407,6 +476,9 @@
 
   @include res--tablet {
     padding: 10% 32px 5%;
+  }
+  @include res--mobile {
+    padding: 15% 20px 4%;
   }
 
   &__title {
@@ -606,6 +678,9 @@
     padding: 0 32px;
     margin-bottom: 12%;
   }
+  @include res--mobile {
+    padding: 0 20px;
+  }
 
   &__title {
     font-size: 26px;
@@ -613,6 +688,9 @@
     color: #222;
     line-height: 1.25;
     margin-bottom: 26px;
+    @include res--tablet {
+      font-size: 22px;
+    }
   }
 
   &__part {
@@ -629,6 +707,10 @@
       font-weight: 600;
       letter-spacing: -0.025em;
       color: #222;
+
+      @include res--tablet {
+        font-size: 17px;
+      }
     }
   }
 
@@ -638,6 +720,12 @@
     width: 70px;
     margin-right: 8px;
     font-size: 0;
+
+    @include res--tablet {
+      width: 18.5%;
+      max-width: 70px;
+      margin-right: 2%;
+    }
 
     &__profile {
       width: 100%;
@@ -683,7 +771,7 @@
 
     &-title {
       position: absolute;
-      top: 0;
+      top: 3px;
       left: 0;
       display: block;
       width: 55px;
@@ -699,7 +787,7 @@
 
     &-list {
       display: block;
-      height: 22px;
+      // height: 22px;
       padding-left: 56px;
     }
 
@@ -714,6 +802,7 @@
 
       @include res--tablet {
         font-weight: 300;
+        line-height: 28px;
       }
 
       &:before,
@@ -764,6 +853,10 @@
   padding: 0 32px;
   height: 226px;
 
+  &:after {
+    @include floatClear;
+  }
+
   @include res--tablet {
     height: auto;
     padding: 0px;
@@ -777,9 +870,12 @@
     height: 100%;
 
     @include res--tablet {
-      border: 1px solid red;
+      border: 1px solid #ccc;
       // padding: 20px;
       height: 63px;
+      width: calc(50% - 10%);
+      float: left;
+      color: #ccc;
     }
 
     &:after {
@@ -792,6 +888,9 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       transition: background-color 500ms;
+      @include res--tablet {
+        display: none;
+      }
     }
 
     &:hover {
@@ -804,6 +903,10 @@
       .details-nav__caption {
         height: auto;
         transform: translateY(70px);
+
+        @include res--tablet {
+          transform: none;
+        }
       }
 
       .details-nav__title:after {
@@ -838,6 +941,10 @@
     background-size: cover;
     background-position: 50% 50%;
     transition: transform 1.3s;
+
+    @include res--tablet {
+      display: none;
+    }
   }
 
   &__caption {
@@ -855,6 +962,13 @@
     color: #fff;
     transform: translateY(100px);
     transition: 300ms;
+
+    @include res--tablet {
+      transform: none;
+      color: #ccc;
+      height: 63px;
+      line-height: 63px;
+    }
   }
 
   &__title {
@@ -863,6 +977,9 @@
     font-size: 18px;
     font-weight: 800;
     letter-spacing: 0.03em;
+    @include res--tablet {
+      font-size: 15px;
+    }
 
     &:after {
       opacity: 0;
@@ -874,6 +991,10 @@
       width: 100%;
       height: 2px;
       background-color: $yellow;
+
+      @include res--tablet {
+        display: none;
+      }
     }
   }
 
@@ -897,6 +1018,10 @@
       background-repeat: no-repeat;
       background-size: 100%;
     }
+
+    @include res--tablet {
+      display: none;
+    }
   }
 
   .go-to-list {
@@ -919,11 +1044,23 @@
 
     @include res--tablet {
       position: relative;
+      float: left;
+      display: inline-block;
       top: 0;
       left: 0;
+      height: 63px;
       transform: none;
       width: 20%;
-      background: darkcyan;
+      color: #ccc;
+      font-weight: 900;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-left: none;
+
+      .hide-tablet {
+        display: none;
+      }
     }
   }
 } //end of .projectMember
